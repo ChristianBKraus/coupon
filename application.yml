@@ -1,0 +1,36 @@
+# application.yml
+
+application:
+    name: coupon
+    description: Coupon Service
+    version: 0.9.0  
+    userPassword: password
+    adminPassword: password          
+
+server:
+    port: 8050
+management:
+    port: 8051
+
+endpoints:
+    sensitive: false
+    enabled: true
+    health:
+        sensitive: false
+management.security.enabled: false 
+    
+spring:
+    data:
+        mongodb:
+            host: 127.0.0.1
+            port: 27017
+            database: coupon
+    
+---    
+spring:
+    profiles: test
+    data:
+        mongodb:
+            host: 127.0.0.1
+            port: 27017
+            database: coupon_test    
