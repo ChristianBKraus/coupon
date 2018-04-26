@@ -15,9 +15,9 @@ public class SecurityConfig extends BaseSecurityConfig {
 	protected void configure(HttpSecurity http) throws Exception {
 		super.configure(http);
 		http.authorizeRequests()
-//			.antMatchers(HttpMethod.GET,  CouponController.PATH+"/**" ).hasAnyRole("USER","ADMIN")
-//			.antMatchers(HttpMethod.POST,  CouponController.PATH+"/withdraw/**" ).hasAnyRole("USER","ADMIN")
-//			.antMatchers(HttpMethod.POST, CouponController.PATH+"/issue/**" ).hasRole("ADMIN")
+			.antMatchers(HttpMethod.GET,  CouponController.PATH+"/**" ).hasAnyRole("USER","ADMIN")
+			.antMatchers(HttpMethod.POST,  CouponController.PATH+"/withdraw/**" ).hasAnyRole("USER","ADMIN")
+			.antMatchers(HttpMethod.POST, CouponController.PATH+"/issue/**" ).hasRole("ADMIN")
 			.anyRequest().permitAll();
 	}
 }
