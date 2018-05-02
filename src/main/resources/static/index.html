@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Demo" ng-controller="Ctrl">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>WebDemo</title>
+
+</head>
+<body>
+	<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/angular.js"></script>
+	<script src="script.js"></script>
+
+	<div id="wrapper" ></div>
+		<!-- Tabelle -->
+		<div> Test: {{test.name}} </div>
+
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Vorname</th>
+						<th scope="col">Nachname</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in personen">
+						<td>{{ person.vorname }}</td>
+						<td>{{ person.nachname }}</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</body>
+</html>
