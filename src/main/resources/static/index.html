@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Demo" ng-controller="Ctrl">
+<html lang="en" ng-app="Coupon" ng-controller="Ctrl">
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<title>WebDemo</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="coupon.css">
+<title>Coupon</title>
 
 </head>
 <body>
 	<script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/angular.js"></script>
+	<script src="assets/js/angular-cookies.min.js"></script>
+	<script src="assets/js/angular-base64.min.js"></script>
 	<script src="script.js"></script>
 
-	<div id="wrapper" ></div>
-		<!-- Tabelle -->
-		<div> Test: {{test.name}} </div>
-
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Vorname</th>
-						<th scope="col">Nachname</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="person in personen">
-						<td>{{ person.vorname }}</td>
-						<td>{{ person.nachname }}</td>
-					</tr>
-				</tbody>
-			</table>
+	<div class="card" ng-click="issue('jonathan')">
+		<img src="jonathan.jpg" alt="Jonathan" class="card-img-top; " style="width:200px;" />
+		<div class="card-body">
+			<p class="card-text"> Guthaben: {{ jonathan }} min </p>
+		</div>
 	</div>
+	<div class="card" ng-click="issue('ines')">
+		<img src="ines.jpg" alt="Ines" class="card-img-top" style="width:200px;" ng-submit="issue('ines')"/>
+		<div class="card-body">
+			<p class="card-text"> Guthaben: {{ ines }} min </p>
+		</div>
+	</div>
+
 </body>
 </html>
