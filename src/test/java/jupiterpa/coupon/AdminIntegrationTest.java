@@ -5,8 +5,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import org.junit.*;
 import org.junit.runner.*;
@@ -17,9 +16,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jupiterpa.coupon.domain.model.*;
 import jupiterpa.coupon.intf.controller.CouponController;
@@ -52,8 +48,8 @@ public class AdminIntegrationTest {
 			.andExpect(status().isOk())
 			.andExpect(content().string("10"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
     	
     	List<BalanceEntity> balances = balanceRepo.findAll();
@@ -81,8 +77,8 @@ public class AdminIntegrationTest {
 			.andExpect(status().isOk())
 			.andExpect(content().string("10"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
 
 //      Post Issue: Name 2
@@ -91,8 +87,8 @@ public class AdminIntegrationTest {
 			.andExpect(status().isOk())
 			.andExpect(content().string("5"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
     	
 //      Post Issue: Name 1 - again
@@ -101,8 +97,8 @@ public class AdminIntegrationTest {
 			.andExpect(status().isOk())
 			.andExpect(content().string("15"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
     	
     	List<BalanceEntity> balances = balanceRepo.findAll();

@@ -5,8 +5,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 import org.junit.*;
 import org.junit.runner.*;
@@ -17,9 +16,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jupiterpa.coupon.domain.model.*;
 import jupiterpa.coupon.intf.controller.CouponController;
@@ -102,7 +98,7 @@ public class UserIntegrationTest {
     }
     
     @Test 
-    public void issueCouponAsUser() {
+    public void issueCouponAsUser() throws Exception {
     	String name = "Name1";
 
 //      Post Issue
@@ -110,8 +106,8 @@ public class UserIntegrationTest {
 			mockMvc.perform( post(PATH + "/issue/" + name + "/10") )
 			.andExpect(status().isForbidden());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
     	
     	List<BalanceEntity> balances = balanceRepo.findAll();
