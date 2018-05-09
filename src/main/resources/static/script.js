@@ -80,7 +80,7 @@ app.controller('Ctrl', function($scope, $http, $cookies, $window, $base64) {
 			$scope.readJonathan();
 		} else {
 			console.log("No Password --> Login")
-			//$window.location.href = "/login";
+			$window.location.href = "/login";
 		}
 	}
 	$scope.read();
