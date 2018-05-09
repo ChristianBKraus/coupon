@@ -5,8 +5,6 @@ import org.springframework.data.mongodb.core.mapping.*;
 @Document
 public class ActionEntity {
 	
-//	@Id
-//	Long id;
 	String name;
 	int value;
 	
@@ -16,12 +14,6 @@ public class ActionEntity {
 		this.value = value;
 	}
 	
-//	public Long getId() {
-//		return id;
-//	}
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
 	public String getName() {
 		return name;
 	}
