@@ -8,9 +8,9 @@ application:
     adminPassword: password          
 
 server:
-    port: 8050
-management:
     port: 8051
+management:
+    port: 8052
 
 endpoints:
     sensitive: false
