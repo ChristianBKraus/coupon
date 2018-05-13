@@ -1,0 +1,1 @@
+nohup mvn spring-boot:run > coupon.log 2>&1 &
